@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/micromodal/dist/micromodal.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Подключите свой файл стилей -->
+  </head>
+  <body>
+    <!-- Кнопка для открытия модального окна -->
+    <button data-micromodal-trigger="modal-1">Записаться</button>
+
+    <!-- Модальное окно -->
+    <div id="modal-1" aria-hidden="true">
+      <div tabindex="-1" data-micromodal-close>
+        <div role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+          <header>
+            <button aria-label="Close modal" data-micromodal-close>
+              &times;
+            </button>
+          </header>
+          <div id="modal-1-content">
+            <!-- Форма в отдельном окне -->
+            <div class="modal-form hidden">
+              <!-- Замените 'hidden' на 'hidden' класс в CSS -->
+              <form id="contact-form">
+                <div class="form-group">
+                  <label for="first-name">Имя:</label>
+                  <input
+                    type="text"
+                    id="first-name"
+                    name="first-name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Фамилия:</label>
+                  <input type="text" id="last-name" name="last-name" required />
+                </div>
+
+                <button type="submit">Отправить</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Подключение библиотеки MicroModal -->
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <!-- Подключение файла main.js -->
+    <script src="modal.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>СТО</title>
+	<link rel="stylesheet" href="style.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+		rel="stylesheet">
+
+	<script>
+		document.addEventListener('scroll', () => {
+			const overlay = document.getElementById('overlay');
+			const about = document.getElementById('about');
+			const header = document.getElementById('header')
+
+			const scrollPosition = window.scrollY;
+			if (scrollPosition > header.scrollHeight) {
+				about.classList.add('fixed')
+			}
+			else {
+				about.classList.remove('fixed')
+			}
+
+			// if (scrollPosition > window.innerHeight * 1.5) {
+			// 	about.classList.add('hidden')
+			// }
+
+			const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+			const opacity = 1 - Math.min(scrollPosition / maxScroll, 0.9); // Максимальная непрозрачность 0.7
+			overlay.style.opacity = opacity;
+		});
+	</script>
+
+</head>
+
+<body>
+
+	<!-- Модальное окно -->
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<form id="contact-form">
+				<div class="form-group">
+					<label for="first-name">Имя:</label>
+					<input type="text" id="first-name" name="first-name" required />
+				</div>
+				<div class="form-group">
+					<label for="last-name">Фамилия:</label>
+					<input type="text" id="last-name" name="last-name" required />
+				</div>
+
+				<button type="submit">Отправить</button>
+			</form>
+		</div>
+	</div>
+
+	<header class="header" id="header">
+		<div class="nav container">
+			<div class="navbar">
+				<img src="./images/LOGO.png" class="logo" />
+				<img src="./images/garage.png" class="name" />
+			</div>
+			<div class="svg">
+				<img src="./images/61027 1.svg" class="svg" />
+			</div>
+		</div>
+	</header>
+	<main class="main">
+
+
+		<section class="hero parallax" id="overlay">
+			<div class="hero-container container">
+				<div class="about" id="about">
+					<p class="about-us">
+						<span class="span">Мы</span> предлагаем полный спектр услуг по
+						ремонту и обслуживанию автомобилей всех марок. Наши опытные
+						специалисты используют современное оборудование, чтобы обеспечить
+						надежность и безопасность вашего автомобиля. Мы ценим ваше время,
+						поэтому предоставляем быстрый и качественный сервис.
+					</p>
+					<div class="wrap">
+						<button class="modal-button button" id="openModalBtn">
+							<span class="button-text">Оставить заявку</span>
+						</button>
+					</div>
+				</div>
+
+			</div>
+		</section>
+		<div class="content-container">
+			<a href="#advantages" class="advantages-ref">
+				<img class="arrow" src="./images/arrow down 1.png" alt="ARROW-DOWN" />
+				<p class="advantages-title">Наши преимущества</p>
+			</a>
+			<section class="advantages" id="advantages">
+				<div class="container">
+					<ul class="container-advantage">
+						<li class="adv-item">
+							<div class="adv-header">
+								<img src="./images/speed icon pink 1.png" class="adv-img" />
+								<h2 class="adv-title">СКОРОСТЬ</h2>
+							</div>
+							<p class="adv-text">
+								Мы используем новейшее оборудование для ремонта и детейлинга
+								вашего автомобиля. Благодаря передовым технологиям, ремонт
+								занимает от 1 до 3 часов в зависимости от сложности поломки.
+							</p>
+						</li>
+						<li class="adv-item">
+							<div class="adv-header">
+								<img src="./images/quality icon pink 1.png" class="adv-img" />
+								<h2 class="adv-title">ВЫСОКОЕ КАЧЕСТВО</h2>
+							</div>
+							<p class="adv-text">
+								Использование исключительно оригинальных деталей, красок и
+								комплектующих от производителей вашего автомобиля. После замены
+								деталей или покраски ваш автомобиль станет выглядеть как новый.
+							</p>
+						</li>
+						<li class="adv-item">
+							<div class="adv-header">
+								<img src="./images/diamond icon pink 1.png" class="adv-img" />
+								<h2 class="adv-title">УНИКАЛЬНОСТЬ</h2>
+							</div>
+							<p class="adv-text">
+								При детейлинге наши дизайнеры подбирают идеальный стиль покраски
+								и детали, чтобы подчеркнуть вашу индивидуальность и выделить ваш
+								автомобиль среди остальных.
+							</p>
+						</li>
+						<li class="adv-item adv-mobile">
+							<div class="adv-header">
+								<img src="./images/иконка.png" class="adv-img" />
+								<h2 class="adv-title">ПОДДЕРЖКА</h2>
+							</div>
+							<p class="adv-text">
+								Наш автосервис гарантирует быструю поддержку на всех этапах — от
+								записи до завершения работ. Опытные специалисты всегда готовы
+								предложить профессиональные консультации и помочь с выбором
+								лучших решений для вашего автомобиля. Мы обеспечиваем высокое
+								качество обслуживания и предлагаем долгосрочную гарантию с
+								возможностью обратиться к нам в любое время.
+							</p>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="services">
+				<div class="container">
+					<h2 class="services-title">НАШИ УСЛУГИ</h2>
+					<div class="line"></div>
+					<ul class="services-list">
+						<li class="services-item">
+							<div class="services-header">
+								<img src="./images/1.svg" class="services-img" />
+								<h2 class="services-item-title">Плановое ТО</h2>
+							</div>
+							<ul class="services-item-list">
+								<li class="item-list">
+									<p>Компьютерная диагностика</p>
+								</li>
+								<li class="item-list">
+									<p>Замена технических жидкостей мотора</p>
+								</li>
+								<li class="item-list">
+									<p>
+										Замена фильтров (масляный, воздушный, салонный, топливный)
+									</p>
+								</li>
+								<li class="item-list">
+									<p>
+										Обслуживание механических и автоматических коробок
+										переключения передач (замена технических жидкостей,
+										фильтров, адаптация, подводка сцепления)
+									</p>
+								</li>
+								<li class="item-list">
+									<p>
+										Обслуживание, замена масла и фильтров в системе полного
+										привода и монопривода
+									</p>
+								</li>
+							</ul>
+						</li>
+						<div class="line"></div>
+						<li class="services-item">
+							<div class="services-header">
+								<img src="./images/2.svg" class="services-img" />
+								<h2 class="services-item-title">Ходовая часть</h2>
+							</div>
+							<ul class="services-item-list">
+								<li class="item-list">
+									<p>Замена амортизаторов, пружин и опорных подшипников</p>
+								</li>
+								<li class="item-list">
+									<p>Замена рычагов, сайлентблоков и ступичных подшипников</p>
+								</li>
+							</ul>
+						</li>
+						<div class="line"></div>
+						<li class="services-item">
+							<div class="services-header">
+								<img src="./images/3.svg" class="services-img" />
+								<h2 class="services-item-title">Системы рулевого управления</h2>
+							</div>
+							<ul class="services-item-list">
+								<li class="item-list">
+									<p>
+										Замена рулевых тяг, наконечников, пыльников рулевых реек
+									</p>
+								</li>
+								<li class="item-list">
+									<p>Замена рулевых реек, гидроусилителей и их элементов</p>
+								</li>
+							</ul>
+						</li>
+						<div class="line"></div>
+					</ul>
+				</div>
+			</section>
+	</main>
+	<footer class="footer">
+		<div class="container footer-container">
+			<div class="info">
+				<h2 class="info-title">Контактная информация</h2>
+				<p class="info-text">
+					Свяжитесь с нами для качественного обслуживания вашего автомобиля.
+					Наши специалисты всегда готовы ответить на любые вопросы и помочь с
+					вашими потребностями.
+				</p>
+			</div>
+			<div>
+				<div class="contacts">
+					<div class="tiktok">
+						<img src="./images/tt.svg" class="contact-img" />
+						<p class="contact-name">@grand_tune_auto_alicante</p>
+					</div>
+					<div class="instagram">
+						<img src="./images/insta.svg" class="contact-img" />
+						<p class="contact-name">@gta_alicante</p>
+					</div>
+					<div class="mail">
+						<img src="./images/mail.svg" class="contact-img" />
+						<p class="contact-name">Gta.alicante@gmail.com</p>
+					</div>
+
+				</div>
+				<p class="other">
+					WhatsApp: 680 715 093 604 875 889 Phone: 966 618 254 C. Mistral, 19,
+					03006 Alicante, Испания
+				</p>
+			</div>
+		</div>
+	</footer>
+	</div>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			// var modal = new VanillaModal();
+			document.getElementById('openModalBtn').addEventListener('click', function () {
+				console.log('hdioa')
+				// console.log(MicroModal)
+				// modal.open('#modal');
+			});
+		});
+	</script>
+
+	<script>
+		// Получаем элементы из DOM
+		const modal = document.getElementById("myModal");
+		const openModalBtn = document.getElementById("openModalBtn");
+		const closeBtn = document.getElementsByClassName("close")[0];
+
+		// Открываем модальное окно при клике на кнопку
+		openModalBtn.onclick = function () {
+			modal.style.display = "block";
+		}
+
+		// Закрываем модальное окно при клике на "x"
+		closeBtn.onclick = function () {
+			modal.style.display = "none";
+		}
+
+		// Закрываем модальное окно при клике вне его
+		window.onclick = function (event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	</script>
+</body>
+
+</html>
