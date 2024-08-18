@@ -32,7 +32,7 @@
 
 			const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
 
-			const opacity = 1 - Math.min(scrollPosition / maxScroll, 0.9); // Максимальная непрозрачность 0.7
+			const opacity = 1 - Math.min(scrollPosition / maxScroll, 1); // Максимальная непрозрачность 0.7
 			overlay.style.opacity = opacity;
 		});
 	</script>
@@ -66,8 +66,16 @@
 				<img src="./images/LOGO.png" class="logo" />
 				<img src="./images/garage.png" class="name" />
 			</div>
-			<div class="svg">
-				<img src="./images/61027 1.svg" class="svg" />
+			<div class="dropdown">
+				<div class="svg dropdown-icon">
+					<img src="./images/61027 1.svg" class="svg" />
+				</div>
+				<div class="dropdown-content">
+					<span>Русский</span>
+					<span>English</span>
+					<span>Español</span>
+					<span>Українська</span>
+				</div>
 			</div>
 		</div>
 	</header>
@@ -292,6 +300,48 @@
 				modal.style.display = "none";
 			}
 		}
+	</script>
+
+	<script>
+		// Получаем элементы
+		const dropdownIcon = document.querySelector('.dropdown-icon');
+		const dropdownContent = document.querySelector('.dropdown-content');
+
+		// Добавляем обработчик клика на иконку
+		dropdownIcon.addEventListener('click', function () {
+			dropdownContent.classList.toggle('show');
+		});
+
+		// Закрываем дропдаун при клике вне его области
+		window.addEventListener('click', function (event) {
+			if (!dropdownIcon.contains(event.target)) {
+				dropdownContent.classList.remove('show');
+			}
+		});
+	</script>
+
+	<script>
+		const images = [
+			'url(./images/bg1.png)',
+			'url(./images/bg2.jpg)',
+			'url(./images/bg3.jpg)',
+			'url(./images/bg4.jpg)',
+		]
+
+		let currentIndex = 0;
+		const slideshowElement = document.querySelector('.hero');
+
+		// Функция для смены фона
+		function changeBackgroundImage() {
+			slideshowElement.style.backgroundImage = images[currentIndex];
+			currentIndex = (currentIndex + 1) % images.length;
+		}
+
+		// Начальная установка фона
+		changeBackgroundImage();
+
+		// Устанавливаем интервал для смены изображений
+		setInterval(changeBackgroundImage, 3000); // 3000ms = 3 секунды
 	</script>
 </body>
 
