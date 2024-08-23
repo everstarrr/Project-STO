@@ -32,9 +32,23 @@
 
 			const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
 
-			const opacity = 1 - Math.min(scrollPosition / maxScroll, 1); // Максимальная непрозрачность 0.7
+			const opacity = 1 - Math.min(scrollPosition / maxScroll, 0.7) * 4; // Максимальная непрозрачность 0.7
 			overlay.style.opacity = opacity;
 		});
+	</script>
+
+	<script>
+		function translatePage(language) {
+			var translateScript = document.createElement('script');
+			translateScript.type = 'text/javascript';
+			translateScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+			document.body.appendChild(translateScript);
+
+			window.googleTranslateElementInit = function () {
+				new google.translate.TranslateElement({ pageLanguage: 'ru', includedLanguages: language }, 'translate_element');
+			};
+			console.log('fji')
+		}
 	</script>
 
 </head>
@@ -44,18 +58,55 @@
 	<!-- Модальное окно -->
 	<div id="myModal" class="modal">
 		<div class="modal-content">
-			<span class="close">&times;</span>
+			<span class="close">
+				<svg width="18" height="18" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M2.58635 2L20 20M19.4137 2L2 20" stroke="black" stroke-width="2.42857"
+						stroke-linecap="round" />
+				</svg>
+
+			</span>
 			<form id="contact-form">
 				<div class="form-group">
-					<label for="first-name">Имя:</label>
-					<input type="text" id="first-name" name="first-name" required />
+					<input type="text" id="first-name" name="first-name" placeholder="Имя пользователя" required />
 				</div>
 				<div class="form-group">
-					<label for="last-name">Фамилия:</label>
-					<input type="text" id="last-name" name="last-name" required />
+					<input type="text" id="last-name" name="last-name" placeholder="Номер телефона" required />
 				</div>
-
-				<button type="submit">Отправить</button>
+				<div class="form-group">
+					<input type="text" id="car-brand" name="car-brand" placeholder="Марка машины" required />
+				</div>
+				<div class="form-group">
+					<input type="text" id="car-brand" name="car-brand" placeholder="VIN-код" required />
+				</div>
+				<div class="checkbox-container">
+					<label class="label-container">Компьютерная диагностика и устранение ошибок
+						<input type="checkbox" />
+						<span class="checkmark"></span>
+					</label>
+					<label class="label-container">Проведение ТО (Замена жидкостей и фильтров)
+						<input type="checkbox" />
+						<span class="checkmark"></span>
+					</label>
+					<label class="label-container">Диагностика и технический осмотр автомобиля
+						<input type="checkbox" />
+						<span class="checkmark"></span>
+					</label>
+					<label class="label-container">Шиномонтаж
+						<input type="checkbox" />
+						<span class="checkmark"></span>
+					</label>
+					<label class="label-container">Автомойка/детейлинг
+						<input type="checkbox" />
+						<span class="checkmark"></span>
+					</label>
+					<div class="form-group">
+						<input style="padding: 11px 26px;" type="text" id="other" name="other" placeholder="Другое:"
+							required />
+					</div>
+				</div>
+				<div style="display: flex; justify-content: center;">
+					<button type="submit" class="send">Отправить</button>
+				</div>
 			</form>
 		</div>
 	</div>
@@ -71,17 +122,15 @@
 					<img src="./images/61027 1.svg" class="svg" />
 				</div>
 				<div class="dropdown-content">
-					<span>Русский</span>
-					<span>English</span>
-					<span>Español</span>
-					<span>Українська</span>
+					<span onclick="translatePage('ru')">Русский</span>
+					<span onclick="translatePage('en')">English</span>
+					<span onclick="translatePage('es')">Español</span>
+					<span onclick="translatePage('ua')">Українська</span>
 				</div>
 			</div>
 		</div>
 	</header>
 	<main class="main">
-
-
 		<section class="hero parallax" id="overlay">
 			<div class="hero-container container">
 				<div class="about" id="about">
@@ -115,9 +164,9 @@
 								<h2 class="adv-title">СКОРОСТЬ</h2>
 							</div>
 							<p class="adv-text">
-								Мы используем новейшее оборудование для ремонта и детейлинга
-								вашего автомобиля. Благодаря передовым технологиям, ремонт
-								занимает от 1 до 3 часов в зависимости от сложности поломки.
+								Мы используем современное оборудование для диагностики и ремонта вашего автомобиля.
+								У нас Вы не услышите стандартного Испанского «mañana» или «próximo mes» !
+								Ваш автомобиль будет продиагностирован и взят в работу в скорейшем времени!
 							</p>
 						</li>
 						<li class="adv-item">
@@ -126,9 +175,10 @@
 								<h2 class="adv-title">ВЫСОКОЕ КАЧЕСТВО</h2>
 							</div>
 							<p class="adv-text">
-								Использование исключительно оригинальных деталей, красок и
-								комплектующих от производителей вашего автомобиля. После замены
-								деталей или покраски ваш автомобиль станет выглядеть как новый.
+								Высокое качество работы в нашем автосервисе достигается за счет опыта наших специалистов
+								и применения только проверенных технологий и материалов.
+								Ваш автомобиль в надежных руках — от диагностики до полного ремонта.
+								Вы получите привычный для Вас сервис и обслуживание!
 							</p>
 						</li>
 						<li class="adv-item">
@@ -137,9 +187,10 @@
 								<h2 class="adv-title">УНИКАЛЬНОСТЬ</h2>
 							</div>
 							<p class="adv-text">
-								При детейлинге наши дизайнеры подбирают идеальный стиль покраски
-								и детали, чтобы подчеркнуть вашу индивидуальность и выделить ваш
-								автомобиль среди остальных.
+								Мы создаем уникальные условия обслуживания, делая процесс ремонта максимально удобным и
+								прозрачным для клиента.
+								Для Вас подготовлена комфортная зона ожидания, где вы можете приятно провести время,
+								играя на PS, или же заняться другими нужными Вам делами в тишине и комфорте
 							</p>
 						</li>
 						<li class="adv-item adv-mobile">
@@ -229,6 +280,169 @@
 							</ul>
 						</li>
 						<div class="line"></div>
+						<li class="services-item">
+							<div class="services-header">
+								<img src="./images/4.svg" class="services-img" />
+								<h2 class="services-item-title">Электрические системы</h2>
+							</div>
+							<ul class="services-item-list">
+								<li class="item-list">
+									<p>
+										Замена стартеров, генераторов
+									</p>
+								</li>
+								<li class="item-list">
+									<p>Диагностика и решение проблем с электрическими системами</p>
+								</li>
+							</ul>
+						</li>
+						<div class="line"></div>
+						<li class="services-item">
+							<div class="services-header">
+								<img src="./images/5.svg" class="services-img" />
+								<h2 class="services-item-title">Моторная группа</h2>
+							</div>
+							<ul class="services-item-list">
+								<li class="item-list">
+									<p>
+										Замена ГРМ
+									</p>
+								</li>
+								<li class="item-list">
+									<p>Ремонт системы топливоподачи</p>
+								</li>
+								<li class="item-list">
+									<p>Ремонт и замена двигателей</p>
+								</li>
+							</ul>
+						</li>
+						<div class="line"></div>
+						<li class="services-item">
+							<div class="services-header">
+								<img src="./images/6.svg" class="services-img" />
+								<h2 class="services-item-title">Трансмиссия</h2>
+							</div>
+							<ul class="services-item-list">
+								<li class="item-list">
+									<p>Замена сцепления</p>
+								</li>
+								<li class="item-list">
+									<p>Ремонт и замена автоматических КПП</p>
+								</li>
+								<li class="item-list">
+									<p>Ремонт и замена механических КПП</p>
+								</li>
+								<li class="item-list">
+									<p>Ремонт и замена раздаточных коробок</p>
+								</li>
+								<li class="item-list">
+									<p>Ремонт и замена дифференциалов</p>
+								</li>
+								<li class="item-list">
+									<p>Ремонт и замена систем управления полным приводом</p>
+								</li>
+							</ul>
+						</li>
+						<div class="line"></div>
+						<li class="services-item">
+							<div class="services-header">
+								<img src="./images/7.svg" class="services-img" />
+								<h2 class="services-item-title">Система охлаждения</h2>
+							</div>
+							<ul class="services-item-list">
+								<li class="item-list">
+									<p>Обслуживание и ремонт системы охлаждения</p>
+								</li>
+								<li class="item-list">
+									<p>Замена радиаторов и отопителей салона</p>
+								</li>
+								<li class="item-list">
+									<p>Обслуживание и замена системы кондиционирования воздуха</p>
+								</li>
+								<li class="item-list">
+									<p>Мойка радиаторов охлаждения и кондиционирования</p>
+								</li>
+							</ul>
+						</li>
+						<div class="line"></div>
+						<li class="services-item">
+							<div class="services-header">
+								<img src="./images/8.svg" class="services-img" />
+								<h2 class="services-item-title">Выхлопная система</h2>
+							</div>
+							<ul class="services-item-list">
+								<li class="item-list">
+									<p>Ремонт и замена элементов выхлопа (катализаторы, глушители, гофры, сажевые
+										фильтры)</p>
+								</li>
+								<li class="item-list">
+									<p>Сварочные работы по выхлопной системе</p>
+								</li>
+							</ul>
+						</li>
+						<div class="line"></div>
+						<li class="services-item">
+							<div class="services-header">
+								<img src="./images/9.svg" class="services-img" />
+								<h2 class="services-item-title">Тормозная система</h2>
+							</div>
+							<ul class="services-item-list">
+								<li class="item-list">
+									<p>Замена и обслуживание тормозной системы (замена тормозных колодок, тормозных
+										шлангов, тормозных магистралей)</p>
+								</li>
+								<li class="item-list">
+									<p>Обслуживание и замена тормозных суппортов (замена ремкомплекта и направляющих)
+									</p>
+								</li>
+								<li class="item-list">
+									<p>Замена тросов и регулировка ручного тормоза</p>
+								</li>
+								<li class="item-list">
+									<p>Ремонт электрического ручного тормоза</p>
+								</li>
+							</ul>
+						</li>
+						<div class="line"></div>
+						<li class="services-item">
+							<div class="services-header">
+								<img src="./images/10.svg" class="services-img" />
+								<h2 class="services-item-title">Дополнительные работы</h2>
+							</div>
+							<ul class="services-item-list">
+								<li class="item-list">
+									<p>Шиномонтаж (замена и ремонт, балансировка)</p>
+								</li>
+								<li class="item-list">
+									<p>Регулировка развала-схождения колес</p>
+								</li>
+								<li class="item-list">
+									<p>Автомойка/детейлинг</p>
+								</li>
+								<li class="item-list">
+									<p>Pre-ITV (проверка и подготовка автомобиля к прохождению технического осмотра)</p>
+								</li>
+								<li class="item-list">
+									<p>Проверка соответствия выхлопов бензиновых и дизельных моторов экологическим
+										нормам</p>
+								</li>
+								<li class="item-list">
+									<p>Декарбонизация и раскоксовка двигателя (в перспективе)</p>
+								</li>
+								<li class="item-list">
+									<p>Орехоструйная чистка впускных каналов дизельных моторов (очистка от сажевых
+										отложений) (в перспективе)</p>
+								</li>
+								<li class="item-list">
+									<p>Орехоструйная чистка впускных каналов дизельных моторов (очистка от сажевых
+										отложений) (в перспективе)</p>
+								</li>
+								<li class="item-list">
+									<p>Ремонт и замена элементов салона (перешивка потолков, стоек и рулей) (в
+										перспективе)</p>
+								</li>
+							</ul>
+						</li>
 					</ul>
 				</div>
 			</section>
@@ -237,11 +451,10 @@
 		<div class="container footer-container">
 			<div class="info">
 				<h2 class="info-title">Контактная информация</h2>
-				<p class="info-text">
-					Свяжитесь с нами для качественного обслуживания вашего автомобиля.
-					Наши специалисты всегда готовы ответить на любые вопросы и помочь с
-					вашими потребностями.
-				</p>
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3128.8831151619493!2d-0.5443175999999998!3d38.3516873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd62350957437c5b%3A0xce86b00df17c8d26!2zUGxhbmV0Q2FycyDvuI8!5e0!3m2!1sru!2sru!4v1724344162026!5m2!1sru!2sru"
+					width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
 			<div>
 				<div class="contacts">
@@ -260,7 +473,7 @@
 
 				</div>
 				<p class="other">
-					WhatsApp: 680 715 093 604 875 889 Phone: 966 618 254 C. Mistral, 19,
+					WhatsApp:<br />680 715 093<br />604 875 889<br />Phone:<br />966 618 254<br />C. Mistral, 19,
 					03006 Alicante, Испания
 				</p>
 			</div>
@@ -323,7 +536,6 @@
 	<script>
 		const images = [
 			'url(./images/bg1.png)',
-			'url(./images/bg2.jpg)',
 			'url(./images/bg3.jpg)',
 			'url(./images/bg4.jpg)',
 		]
