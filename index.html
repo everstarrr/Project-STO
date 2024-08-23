@@ -37,20 +37,8 @@
 		});
 	</script>
 
-	<script>
-		function translatePage(language) {
-			var translateScript = document.createElement('script');
-			translateScript.type = 'text/javascript';
-			translateScript.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-			document.body.appendChild(translateScript);
-
-			window.googleTranslateElementInit = function () {
-				new google.translate.TranslateElement({ pageLanguage: 'ru', includedLanguages: language }, 'translate_element');
-			};
-			console.log('fji')
-		}
+	<script src="lang.js">
 	</script>
-
 </head>
 
 <body>
@@ -122,10 +110,10 @@
 					<img src="./images/61027 1.svg" class="svg" />
 				</div>
 				<div class="dropdown-content">
-					<span onclick="translatePage('ru')">Русский</span>
-					<span onclick="translatePage('en')">English</span>
-					<span onclick="translatePage('es')">Español</span>
-					<span onclick="translatePage('ua')">Українська</span>
+					<span onclick="translatee('ru')">Русский</span>
+					<span onclick="translatee('en')">English</span>
+					<span onclick="translatee('es')">Español</span>
+					<span onclick="translatee('ua')">Українська</span>
 				</div>
 			</div>
 		</div>
@@ -134,8 +122,8 @@
 		<section class="hero parallax" id="overlay">
 			<div class="hero-container container">
 				<div class="about" id="about">
-					<p class="about-us">
-						<span class="span">Мы</span> предлагаем полный спектр услуг по
+					<p class="about-us" data-translate="hero.text">
+						<span data-translate="hero.we" class="span">Мы</span> предлагаем полный спектр услуг по
 						ремонту и обслуживанию автомобилей всех марок. Наши опытные
 						специалисты используют современное оборудование, чтобы обеспечить
 						надежность и безопасность вашего автомобиля. Мы ценим ваше время,
@@ -143,7 +131,7 @@
 					</p>
 					<div class="wrap">
 						<button class="modal-button button" id="openModalBtn">
-							<span class="button-text">Оставить заявку</span>
+							<span class="button-text" data-translate="hero.button">Оставить заявку</span>
 						</button>
 					</div>
 				</div>
@@ -153,7 +141,7 @@
 		<div class="content-container">
 			<a href="#advantages" class="advantages-ref">
 				<img class="arrow" src="./images/arrow down 1.png" alt="ARROW-DOWN" />
-				<p class="advantages-title">Наши преимущества</p>
+				<p class="advantages-title" data-translate="advantages.title">Наши преимущества</p>
 			</a>
 			<section class="advantages" id="advantages">
 				<div class="container">
@@ -161,9 +149,9 @@
 						<li class="adv-item">
 							<div class="adv-header">
 								<img src="./images/speed icon pink 1.png" class="adv-img" />
-								<h2 class="adv-title">СКОРОСТЬ</h2>
+								<h2 class="adv-title" data-translate="advantages.speed.title">СКОРОСТЬ</h2>
 							</div>
-							<p class="adv-text">
+							<p class="adv-text" data-translate="advantages.speed.description">
 								Мы используем современное оборудование для диагностики и ремонта вашего автомобиля.
 								У нас Вы не услышите стандартного Испанского «mañana» или «próximo mes» !
 								Ваш автомобиль будет продиагностирован и взят в работу в скорейшем времени!
@@ -172,9 +160,9 @@
 						<li class="adv-item">
 							<div class="adv-header">
 								<img src="./images/quality icon pink 1.png" class="adv-img" />
-								<h2 class="adv-title">ВЫСОКОЕ КАЧЕСТВО</h2>
+								<h2 class="adv-title" data-translate="advantages.quality.title">ВЫСОКОЕ КАЧЕСТВО</h2>
 							</div>
-							<p class="adv-text">
+							<p class="adv-text" data-translate="advantages.quality.description">
 								Высокое качество работы в нашем автосервисе достигается за счет опыта наших специалистов
 								и применения только проверенных технологий и материалов.
 								Ваш автомобиль в надежных руках — от диагностики до полного ремонта.
@@ -184,9 +172,9 @@
 						<li class="adv-item">
 							<div class="adv-header">
 								<img src="./images/diamond icon pink 1.png" class="adv-img" />
-								<h2 class="adv-title">УНИКАЛЬНОСТЬ</h2>
+								<h2 class="adv-title" data-translate="advantages.unique.title">УНИКАЛЬНОСТЬ</h2>
 							</div>
-							<p class="adv-text">
+							<p class="adv-text" data-translate="advantages.unique.description">
 								Мы создаем уникальные условия обслуживания, делая процесс ремонта максимально удобным и
 								прозрачным для клиента.
 								Для Вас подготовлена комфортная зона ожидания, где вы можете приятно провести время,
@@ -196,9 +184,9 @@
 						<li class="adv-item adv-mobile">
 							<div class="adv-header">
 								<img src="./images/иконка.png" class="adv-img" />
-								<h2 class="adv-title">ПОДДЕРЖКА</h2>
+								<h2 class="adv-title" data-translate="advantages.support.title">ПОДДЕРЖКА</h2>
 							</div>
-							<p class="adv-text">
+							<p class="adv-text" data-translate="advantages.ssupport.description">
 								Наш автосервис гарантирует быструю поддержку на всех этапах — от
 								записи до завершения работ. Опытные специалисты всегда готовы
 								предложить профессиональные консультации и помочь с выбором
@@ -212,35 +200,35 @@
 			</section>
 			<section class="services">
 				<div class="container">
-					<h2 class="services-title">НАШИ УСЛУГИ</h2>
+					<h2 class="services-title" data-translate="services.title">НАШИ УСЛУГИ</h2>
 					<div class="line"></div>
 					<ul class="services-list">
 						<li class="services-item">
 							<div class="services-header">
 								<img src="./images/1.svg" class="services-img" />
-								<h2 class="services-item-title">Плановое ТО</h2>
+								<h2 class="services-item-title" data-translate="services.1.header">Плановое ТО</h2>
 							</div>
 							<ul class="services-item-list">
 								<li class="item-list">
-									<p>Компьютерная диагностика</p>
+									<p data-translate="services.1.1">Компьютерная диагностика</p>
 								</li>
 								<li class="item-list">
-									<p>Замена технических жидкостей мотора</p>
+									<p data-translate="services.1.2">Замена технических жидкостей мотора</p>
 								</li>
 								<li class="item-list">
-									<p>
+									<p data-translate="services.1.3">
 										Замена фильтров (масляный, воздушный, салонный, топливный)
 									</p>
 								</li>
 								<li class="item-list">
-									<p>
+									<p data-translate="services.1.4">
 										Обслуживание механических и автоматических коробок
 										переключения передач (замена технических жидкостей,
 										фильтров, адаптация, подводка сцепления)
 									</p>
 								</li>
 								<li class="item-list">
-									<p>
+									<p data-translate="services.1.5">
 										Обслуживание, замена масла и фильтров в системе полного
 										привода и монопривода
 									</p>
@@ -251,14 +239,14 @@
 						<li class="services-item">
 							<div class="services-header">
 								<img src="./images/2.svg" class="services-img" />
-								<h2 class="services-item-title">Ходовая часть</h2>
+								<h2 class="services-item-title" data-translate="services.2.header">Ходовая часть</h2>
 							</div>
 							<ul class="services-item-list">
 								<li class="item-list">
-									<p>Замена амортизаторов, пружин и опорных подшипников</p>
+									<p data-translate="services.2.1">Замена амортизаторов, пружин и опорных подшипников</p>
 								</li>
 								<li class="item-list">
-									<p>Замена рычагов, сайлентблоков и ступичных подшипников</p>
+									<p data-translate="services.2.2">Замена рычагов, сайлентблоков и ступичных подшипников</p>
 								</li>
 							</ul>
 						</li>
@@ -266,16 +254,16 @@
 						<li class="services-item">
 							<div class="services-header">
 								<img src="./images/3.svg" class="services-img" />
-								<h2 class="services-item-title">Системы рулевого управления</h2>
+								<h2 class="services-item-title" data-translate="services.3.header">Системы рулевого управления</h2>
 							</div>
 							<ul class="services-item-list">
 								<li class="item-list">
-									<p>
+									<p data-translate="services.3.1">
 										Замена рулевых тяг, наконечников, пыльников рулевых реек
 									</p>
 								</li>
 								<li class="item-list">
-									<p>Замена рулевых реек, гидроусилителей и их элементов</p>
+									<p data-translate="services.3.2">Замена рулевых реек, гидроусилителей и их элементов</p>
 								</li>
 							</ul>
 						</li>
@@ -283,16 +271,16 @@
 						<li class="services-item">
 							<div class="services-header">
 								<img src="./images/4.svg" class="services-img" />
-								<h2 class="services-item-title">Электрические системы</h2>
+								<h2 class="services-item-title" data-translate="services.4.header">Электрические системы</h2>
 							</div>
 							<ul class="services-item-list">
 								<li class="item-list">
-									<p>
+									<p data-translate="services.4.1">
 										Замена стартеров, генераторов
 									</p>
 								</li>
 								<li class="item-list">
-									<p>Диагностика и решение проблем с электрическими системами</p>
+									<p data-translate="services.4.2">Диагностика и решение проблем с электрическими системами</p>
 								</li>
 							</ul>
 						</li>
@@ -300,19 +288,19 @@
 						<li class="services-item">
 							<div class="services-header">
 								<img src="./images/5.svg" class="services-img" />
-								<h2 class="services-item-title">Моторная группа</h2>
+								<h2 class="services-item-title" data-translate="services.5.header">Моторная группа</h2>
 							</div>
 							<ul class="services-item-list">
 								<li class="item-list">
-									<p>
+									<p data-translate="services.5.1">
 										Замена ГРМ
 									</p>
 								</li>
 								<li class="item-list">
-									<p>Ремонт системы топливоподачи</p>
+									<p data-translate="services.5.2">Ремонт системы топливоподачи</p>
 								</li>
 								<li class="item-list">
-									<p>Ремонт и замена двигателей</p>
+									<p data-translate="services.5.3">Ремонт и замена двигателей</p>
 								</li>
 							</ul>
 						</li>
@@ -320,26 +308,26 @@
 						<li class="services-item">
 							<div class="services-header">
 								<img src="./images/6.svg" class="services-img" />
-								<h2 class="services-item-title">Трансмиссия</h2>
+								<h2 class="services-item-title" data-translate="services.6.header">Трансмиссия</h2>
 							</div>
 							<ul class="services-item-list">
 								<li class="item-list">
-									<p>Замена сцепления</p>
+									<p data-translate="services.6.1">Замена сцепления</p>
 								</li>
 								<li class="item-list">
-									<p>Ремонт и замена автоматических КПП</p>
+									<p data-translate="services.6.2">Ремонт и замена автоматических КПП</p>
 								</li>
 								<li class="item-list">
-									<p>Ремонт и замена механических КПП</p>
+									<p data-translate="services.6.3">Ремонт и замена механических КПП</p>
 								</li>
 								<li class="item-list">
-									<p>Ремонт и замена раздаточных коробок</p>
+									<p data-translate="services.6.4">Ремонт и замена раздаточных коробок</p>
 								</li>
 								<li class="item-list">
-									<p>Ремонт и замена дифференциалов</p>
+									<p data-translate="services.6.5">Ремонт и замена дифференциалов</p>
 								</li>
 								<li class="item-list">
-									<p>Ремонт и замена систем управления полным приводом</p>
+									<p data-translate="services.6.6">Ремонт и замена систем управления полным приводом</p>
 								</li>
 							</ul>
 						</li>
@@ -347,20 +335,20 @@
 						<li class="services-item">
 							<div class="services-header">
 								<img src="./images/7.svg" class="services-img" />
-								<h2 class="services-item-title">Система охлаждения</h2>
+								<h2 class="services-item-title" data-translate="services.7.header">Система охлаждения</h2>
 							</div>
 							<ul class="services-item-list">
 								<li class="item-list">
-									<p>Обслуживание и ремонт системы охлаждения</p>
+									<p data-translate="services.7.1">Обслуживание и ремонт системы охлаждения</p>
 								</li>
 								<li class="item-list">
-									<p>Замена радиаторов и отопителей салона</p>
+									<p data-translate="services.7.2">Замена радиаторов и отопителей салона</p>
 								</li>
 								<li class="item-list">
-									<p>Обслуживание и замена системы кондиционирования воздуха</p>
+									<p data-translate="services.7.3">Обслуживание и замена системы кондиционирования воздуха</p>
 								</li>
 								<li class="item-list">
-									<p>Мойка радиаторов охлаждения и кондиционирования</p>
+									<p data-translate="services.7.4">Мойка радиаторов охлаждения и кондиционирования</p>
 								</li>
 							</ul>
 						</li>
@@ -368,15 +356,15 @@
 						<li class="services-item">
 							<div class="services-header">
 								<img src="./images/8.svg" class="services-img" />
-								<h2 class="services-item-title">Выхлопная система</h2>
+								<h2 class="services-item-title" data-translate="services.8.header">Выхлопная система</h2>
 							</div>
 							<ul class="services-item-list">
 								<li class="item-list">
-									<p>Ремонт и замена элементов выхлопа (катализаторы, глушители, гофры, сажевые
+									<p data-translate="services.8.1">Ремонт и замена элементов выхлопа (катализаторы, глушители, гофры, сажевые
 										фильтры)</p>
 								</li>
 								<li class="item-list">
-									<p>Сварочные работы по выхлопной системе</p>
+									<p data-translate="services.8.2">Сварочные работы по выхлопной системе</p>
 								</li>
 							</ul>
 						</li>
@@ -384,22 +372,22 @@
 						<li class="services-item">
 							<div class="services-header">
 								<img src="./images/9.svg" class="services-img" />
-								<h2 class="services-item-title">Тормозная система</h2>
+								<h2 class="services-item-title" data-translate="services.9.header">Тормозная система</h2>
 							</div>
 							<ul class="services-item-list">
 								<li class="item-list">
-									<p>Замена и обслуживание тормозной системы (замена тормозных колодок, тормозных
+									<p data-translate="services.9.1">Замена и обслуживание тормозной системы (замена тормозных колодок, тормозных
 										шлангов, тормозных магистралей)</p>
 								</li>
 								<li class="item-list">
-									<p>Обслуживание и замена тормозных суппортов (замена ремкомплекта и направляющих)
+									<p data-translate="services.9.2">Обслуживание и замена тормозных суппортов (замена ремкомплекта и направляющих)
 									</p>
 								</li>
 								<li class="item-list">
-									<p>Замена тросов и регулировка ручного тормоза</p>
+									<p data-translate="services.9.3">Замена тросов и регулировка ручного тормоза</p>
 								</li>
 								<li class="item-list">
-									<p>Ремонт электрического ручного тормоза</p>
+									<p data-translate="services.9.4">Ремонт электрического ручного тормоза</p>
 								</li>
 							</ul>
 						</li>
@@ -407,38 +395,38 @@
 						<li class="services-item">
 							<div class="services-header">
 								<img src="./images/10.svg" class="services-img" />
-								<h2 class="services-item-title">Дополнительные работы</h2>
+								<h2 class="services-item-title" data-translate="services.10.header">Дополнительные работы</h2>
 							</div>
 							<ul class="services-item-list">
 								<li class="item-list">
-									<p>Шиномонтаж (замена и ремонт, балансировка)</p>
+									<p data-translate="services.10.1">Шиномонтаж (замена и ремонт, балансировка)</p>
 								</li>
 								<li class="item-list">
-									<p>Регулировка развала-схождения колес</p>
+									<p data-translate="services.10.2">Регулировка развала-схождения колес</p>
 								</li>
 								<li class="item-list">
-									<p>Автомойка/детейлинг</p>
+									<p data-translate="services.10.3">Автомойка/детейлинг</p>
 								</li>
 								<li class="item-list">
-									<p>Pre-ITV (проверка и подготовка автомобиля к прохождению технического осмотра)</p>
+									<p data-translate="services.10.4">Pre-ITV (проверка и подготовка автомобиля к прохождению технического осмотра)</p>
 								</li>
 								<li class="item-list">
-									<p>Проверка соответствия выхлопов бензиновых и дизельных моторов экологическим
+									<p data-translate="services.10.5">Проверка соответствия выхлопов бензиновых и дизельных моторов экологическим
 										нормам</p>
 								</li>
 								<li class="item-list">
-									<p>Декарбонизация и раскоксовка двигателя (в перспективе)</p>
+									<p data-translate="services.10.6">Декарбонизация и раскоксовка двигателя (в перспективе)</p>
 								</li>
 								<li class="item-list">
-									<p>Орехоструйная чистка впускных каналов дизельных моторов (очистка от сажевых
+									<p data-translate="services.10.7">Орехоструйная чистка впускных каналов дизельных моторов (очистка от сажевых
 										отложений) (в перспективе)</p>
 								</li>
 								<li class="item-list">
-									<p>Орехоструйная чистка впускных каналов дизельных моторов (очистка от сажевых
+									<p data-translate="services.10.8">Орехоструйная чистка впускных каналов дизельных моторов (очистка от сажевых
 										отложений) (в перспективе)</p>
 								</li>
 								<li class="item-list">
-									<p>Ремонт и замена элементов салона (перешивка потолков, стоек и рулей) (в
+									<p data-translate="services.10.9">Ремонт и замена элементов салона (перешивка потолков, стоек и рулей) (в
 										перспективе)</p>
 								</li>
 							</ul>
@@ -450,7 +438,7 @@
 	<footer class="footer">
 		<div class="container footer-container">
 			<div class="info">
-				<h2 class="info-title">Контактная информация</h2>
+				<h2 class="info-title" data-translate="footer.contact">Контактная информация</h2>
 				<iframe
 					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3128.8831151619493!2d-0.5443175999999998!3d38.3516873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd62350957437c5b%3A0xce86b00df17c8d26!2zUGxhbmV0Q2FycyDvuI8!5e0!3m2!1sru!2sru!4v1724344162026!5m2!1sru!2sru"
 					width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
@@ -555,6 +543,7 @@
 		// Устанавливаем интервал для смены изображений
 		setInterval(changeBackgroundImage, 3000); // 3000ms = 3 секунды
 	</script>
+
 </body>
 
 </html>
