@@ -6,11 +6,17 @@ const translations = {
       3: 'Диагностика и технический осмотр автомобиля',
       4: 'Шиномонтаж',
       5: 'Автомойка/детейлинг',
+      send: 'Отправить',
+      name: 'Имя пользователя',
+      number: 'Номер телефона',
+      car: 'Марка машины',
+      vin: 'VIN-код',
+      other: 'Другое:',
     },
     hero: {
       we: 'Мы',
       text: 'Мы предлагаем полный спектр услуг по ремонту и обслуживанию автомобилей всех марок. Наши опытные специалисты используют современное оборудование, чтобы обеспечить надежность и безопасность вашего автомобиля. Мы ценим ваше время, поэтому предоставляем быстрый и качественный сервис.',
-      button: 'Оставить заявку'
+      button: 'Оставить заявку',
     },
     advantages: {
       title: 'Наши преимущества',
@@ -120,11 +126,17 @@ const translations = {
       3: 'Диагностика и технический осмотр автомобиля',
       4: 'Шиномонтаж',
       5: 'Автомойка/детейлинг',
+      send: 'Send',
+      name: 'Name',
+      number: 'Номер телефона',
+      car: 'Марка машины',
+      vin: 'VIN-код',
+      other: 'Другое:',
     },
     hero: {
       we: 'We',
       text: 'We offer a full range of services for repair and maintenance of cars of all brands. Our experienced specialists use modern equipment to ensure the reliability and safety of your car. We value your time, so we provide fast and high-quality service.',
-      button: 'Leave a request'
+      button: 'Leave a request',
     },
     advantages: {
       title: 'Our advantages',
@@ -228,7 +240,6 @@ const translations = {
   },
 };
 
-
 // Рекурсивная функция для получения значения по вложенному ключу
 function getNestedValue(obj, key) {
   return key.split('.').reduce((o, k) => o && o[k], obj);
@@ -237,14 +248,44 @@ function getNestedValue(obj, key) {
 function translatee(lang) {
   // Находим все элементы с атрибутом data-translate
   const elements = document.querySelectorAll('[data-translate]');
-  
+
   elements.forEach(element => {
-      // Получаем ключ из атрибута data-translate
-      const key = element.getAttribute('data-translate');
-      // Используем рекурсивную функцию для получения значения из объекта
-      const translation = getNestedValue(translations[lang], key);
-      if (translation) {
-          element.textContent = translation;
-      }
+    // Получаем ключ из атрибута data-translate
+    const key = element.getAttribute('data-translate');
+    // Используем рекурсивную функцию для получения значения из объекта
+    const translation = getNestedValue(translations[lang], key);
+            if (translation) {
+            // Найдем первый текстовый узел в элементе
+            let textNodeFound = false;
+
+            element.childNodes.forEach(node => {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    if (!textNodeFound) {
+                        // Заменяем текст первого текстового узла на новый перевод
+                        node.textContent = translation;
+                        textNodeFound = true;
+                    } else {
+                        // Удаляем все последующие текстовые узлы, чтобы избежать дублирования
+                        node.remove();
+                    }
+                }
+            });
+
+            // Если текстового узла нет (например, изначально его не было), добавляем его в начало
+            if (!textNodeFound) {
+                element.insertBefore(document.createTextNode(translation), element.firstChild);
+            }
+        }
+  });
+
+  const inputElements = document.querySelectorAll(
+    '[data-translate-placeholder]'
+  );
+  inputElements.forEach(input => {
+    const key = input.getAttribute('data-translate-placeholder');
+    const translation = getNestedValue(translations[lang], key);
+    if (translation) {
+      input.setAttribute('placeholder', translation);
+    }
   });
 }
