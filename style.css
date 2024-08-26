@@ -524,7 +524,8 @@ iframe {
 
 .parallax-image {
   transform: translateZ(0);
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .parallax-text {
@@ -728,7 +729,9 @@ iframe {
   text-decoration: none;
   display: block;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 /* Стили для пунктов дропдауна при наведении */
@@ -752,6 +755,10 @@ iframe {
     border-radius: 8px;
   }
 
+  & input::-moz-placeholder {
+    color: black;
+  }
+
   & input::placeholder {
     color: black;
   }
@@ -772,7 +779,6 @@ form {
   font-size: 18px;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   padding-left: 36px;
   padding-top: 4px;
@@ -817,8 +823,6 @@ form {
   height: 14px;
   border: solid white;
   border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 

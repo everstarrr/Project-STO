@@ -121,17 +121,17 @@ const translations = {
 
   en: {
     modal: {
-      1: 'Компьютерная диагностика и устранение ошибок',
-      2: 'Проведение ТО (Замена жидкостей и фильтров)',
-      3: 'Диагностика и технический осмотр автомобиля',
-      4: 'Шиномонтаж',
-      5: 'Автомойка/детейлинг',
+      1: 'Computer diagnostics and error correction',
+      2: 'Maintenance service (Fluid and filter replacement)',
+      3: 'Vehicle diagnostics and inspection',
+      4: 'Tire fitting',
+      5: 'Car wash/detailing',
       send: 'Send',
       name: 'Name',
-      number: 'Номер телефона',
-      car: 'Марка машины',
-      vin: 'VIN-код',
-      other: 'Другое:',
+      number: 'Phone number',
+      car: 'Car brand',
+      vin: 'VIN-code',
+      other: 'Other:',
     },
     hero: {
       we: 'We',
@@ -236,6 +236,246 @@ const translations = {
     footer: {
       contact: 'Contact Information',
       country: 'Spain',
+    },
+  },
+
+  es: {
+    modal: {
+      1: 'Diagnóstico de la computadora y corrección de errores',
+      2: 'Servicio de mantenimiento (reemplazo de líquidos y filtros)',
+      3: 'Diagnóstico e inspección del vehículo',
+      4: 'Montaje de neumáticos',
+      5: 'Lavado y detallado de autos',
+      send: 'Enviar',
+      name: 'Nombre',
+      number: 'Número de teléfono',
+      car: 'Marca del coche',
+      vin: 'Código VIN',
+      other: 'Otro:',
+    },
+    hero: {
+      we: 'Nosotros',
+      text: 'Ofrecemos una gama completa de servicios para la reparación y mantenimiento de coches de todas las marcas. Nuestros especialistas experimentados utilizan equipos modernos para garantizar la fiabilidad y seguridad de su coche. Valoramos su tiempo, por lo que proporcionamos un servicio rápido y de alta calidad.',
+      button: 'Dejar una solicitud',
+    },
+    advantages: {
+      title: 'Nuestras ventajas',
+      speed: {
+        title: 'VELOCIDAD',
+        description:
+          'Utilizamos equipos modernos para diagnosticar y reparar su coche. ¡Con nosotros no escuchará el típico "mañana" o "el próximo mes" español! ¡Su coche será diagnosticado y puesto en trabajo lo antes posible!',
+      },
+      quality: {
+        title: 'ALTA CALIDAD',
+        description:
+          'Su coche está en buenas manos, desde el diagnóstico hasta la reparación completa. ¡Recibirá el servicio y mantenimiento al que está acostumbrado!',
+      },
+      unique: {
+        title: 'UNICIDAD',
+        description:
+          'Creamos condiciones de servicio únicas, haciendo que el proceso de reparación sea lo más cómodo y transparente posible para el cliente. Se ha preparado un área de espera cómoda para usted, donde puede pasar un buen rato jugando a la PS o haciendo otras cosas que necesite en paz y comodidad.',
+      },
+      support: {
+        title: 'SOPORTE',
+        description:
+          'Nuestro servicio de coches garantiza un soporte rápido en todas las etapas, desde la inscripción hasta la finalización del trabajo. Los especialistas experimentados siempre están listos para ofrecer asesoramiento profesional y ayudarle a elegir las mejores soluciones para su coche. Ofrecemos un servicio de alta calidad y una garantía a largo plazo con la posibilidad de contactarnos en cualquier momento.',
+      },
+    },
+    services: {
+      title: 'NUESTROS SERVICIOS',
+      1: {
+        header: 'Mantenimiento programado',
+        1: 'Diagnóstico de la computadora',
+        2: 'Reemplazo de líquidos del motor',
+        3: 'Reemplazo de filtros (aceite, aire, cabina, combustible)',
+        4: 'Mantenimiento de cajas de cambios mecánicas y automáticas (reemplazo de líquidos técnicos, filtros, adaptación, revestimiento del embrague)',
+        5: 'Mantenimiento, reemplazo de aceite y filtros en sistemas de tracción en todas las ruedas y tracción en una sola rueda',
+      },
+      2: {
+        header: 'Chasis',
+        1: 'Reemplazo de amortiguadores, resortes y cojinetes de soporte',
+        2: 'Reemplazo de brazos, silent blocks y cojinetes de rueda',
+      },
+      3: {
+        header: 'Sistemas de dirección',
+        1: 'Reemplazo de barras de dirección, puntas, botas de cremallera de dirección',
+        2: 'Reemplazo de cremalleras de dirección, dirección asistida y sus elementos',
+      },
+      4: {
+        header: 'Sistemas eléctricos',
+        1: 'Reemplazo de arranques, generadores',
+        2: 'Diagnóstico y resolución de problemas con sistemas eléctricos',
+      },
+      5: {
+        header: 'Grupo motor',
+        1: 'Reemplazo de la correa de distribución',
+        2: 'Reparación del sistema de suministro de combustible',
+        3: 'Reparación y reemplazo del motor',
+      },
+      6: {
+        header: 'Transmisión',
+        1: 'Reemplazo del embrague',
+        2: 'Reparación y reemplazo de transmisiones automáticas',
+        3: 'Reparación y reemplazo de transmisiones manuales',
+        4: 'Reparación y reemplazo de cajas de transferencia',
+        5: 'Reparación y reemplazo de diferenciales',
+        6: 'Reparación y reemplazo de sistemas de control de tracción en todas las ruedas',
+      },
+      7: {
+        header: 'Sistema de refrigeración',
+        1: 'Mantenimiento y reparación del sistema de refrigeración',
+        2: 'Reemplazo de radiadores y calentadores interiores',
+        3: 'Mantenimiento y reemplazo del sistema de aire acondicionado',
+        4: 'Lavado de radiadores de refrigeración y aire acondicionado',
+      },
+      8: {
+        header: 'Sistema de escape',
+        1: 'Reparación y reemplazo de elementos de escape (catalizadores, silenciadores, fuelles, filtros de partículas)',
+        2: 'Trabajos de soldadura en el sistema de escape',
+      },
+      9: {
+        header: 'Sistema de frenos',
+        1: 'Reemplazo y mantenimiento del sistema de frenos (reemplazo de pastillas de freno, mangueras de freno, líneas de freno)',
+        2: 'Mantenimiento y reemplazo de pinzas de freno (reemplazo de kit de reparación y guías)',
+        3: 'Reemplazo de cables y ajuste del freno de mano',
+        4: 'Reparación del freno de mano eléctrico',
+      },
+      10: {
+        header: 'Trabajo adicional',
+        1: 'Montaje de neumáticos (reemplazo y reparación, balanceo)',
+        2: 'Ajuste de alineación de ruedas',
+        3: 'Lavado y detallado de autos',
+        4: 'Pre-ITV (comprobación y preparación del coche para la inspección técnica)',
+        5: 'Comprobación de conformidad de las emisiones de motores de gasolina y diésel con las normas medioambientales',
+        6: 'Descarbonización del motor y descarbonización (en el futuro)',
+        7: 'Limpieza con chorro de nuez de los canales de admisión de motores diésel (limpieza de depósitos de hollín) (en el futuro)',
+        8: 'Limpieza con chorro de nuez de los canales de admisión de motores diésel (limpieza de depósitos de hollín) (en el futuro)',
+        9: 'Reparación y reemplazo de elementos interiores (tapicería de techos, pilares y volantes) (en el futuro)',
+      },
+    },
+    footer: {
+      contact: 'Información de contacto',
+      country: 'España',
+    },
+  },
+
+  ua: {
+    modal: {
+      1: 'Комп’ютерна діагностика та усунення помилок',
+      2: 'Проведення ТО (Заміна рідин та фільтрів)',
+      3: 'Діагностика та технічний огляд автомобіля',
+      4: 'Шиномонтаж',
+      5: 'Автомийка/детейлінг',
+      send: 'Відправити',
+      name: "Ім'я користувача",
+      number: 'Номер телефону',
+      car: 'Марка автомобіля',
+      vin: 'VIN-код',
+      other: 'Інше:',
+    },
+    hero: {
+      we: 'Ми',
+      text: 'Ми пропонуємо повний спектр послуг з ремонту та обслуговування автомобілів усіх марок. Наші досвідчені фахівці використовують сучасне обладнання, щоб забезпечити надійність і безпеку вашого автомобіля. Ми цінуємо ваш час, тому надаємо швидкий та якісний сервіс.',
+      button: 'Залишити заявку',
+    },
+    advantages: {
+      title: 'Наші переваги',
+      speed: {
+        title: 'ШВИДКІСТЬ',
+        description:
+          'Ми використовуємо сучасне обладнання для діагностики та ремонту вашого автомобіля. У нас Ви не почуєте стандартного Іспанського «mañana» або «próximo mes»! Ваш автомобіль буде продіагностовано і взято в роботу в найкоротші терміни!',
+      },
+      quality: {
+        title: 'ВИСОКА ЯКІСТЬ',
+        description:
+          'Висока якість роботи в нашому автосервісі досягається за рахунок досвіду наших фахівців і застосування тільки перевірених технологій і матеріалів. Ваш автомобіль в надійних руках — від діагностики до повного ремонту. Ви отримаєте звичний для Вас сервіс і обслуговування!',
+      },
+      unique: {
+        title: 'УНІКАЛЬНІСТЬ',
+        description:
+          'Ми створюємо унікальні умови обслуговування, роблячи процес ремонту максимально зручним і прозорим для клієнта. Для Вас підготовлена комфортна зона очікування, де ви можете приємно провести час, граючи на PS, або ж зайнятися іншими необхідними Вам справами в тиші та комфорті.',
+      },
+      support: {
+        title: 'ПІДТРИМКА',
+        description:
+          'Наш автосервіс гарантує швидку підтримку на всіх етапах — від запису до завершення робіт. Досвідчені фахівці завжди готові запропонувати професійні консультації та допомогти з вибором найкращих рішень для вашого автомобіля. Ми забезпечуємо високу якість обслуговування і пропонуємо довгострокову гарантію з можливістю звернутися до нас у будь-який час.',
+      },
+    },
+    services: {
+      title: 'НАШІ ПОСЛУГИ',
+      1: {
+        header: 'Планове ТО',
+        1: 'Комп’ютерна діагностика',
+        2: 'Заміна технічних рідин двигуна',
+        3: 'Заміна фільтрів (масляний, повітряний, салонний, паливний)',
+        4: 'Обслуговування механічних та автоматичних коробок передач (заміна технічних рідин, фільтрів, адаптація, підводка зчеплення)',
+        5: 'Обслуговування, заміна оливи та фільтрів у системі повного приводу та моноприводу',
+      },
+      2: {
+        header: 'Ходова частина',
+        1: 'Заміна амортизаторів, пружин та опорних підшипників',
+        2: 'Заміна важелів, сайлентблоків та ступичних підшипників',
+      },
+      3: {
+        header: 'Системи кермування',
+        1: 'Заміна рульових тяг, наконечників, пильників рульових рейок',
+        2: 'Заміна рульових рейок, гідропідсилювачів та їхніх елементів',
+      },
+      4: {
+        header: 'Електричні системи',
+        1: 'Заміна стартерів, генераторів',
+        2: 'Діагностика та вирішення проблем з електричними системами',
+      },
+      5: {
+        header: 'Моторна група',
+        1: 'Заміна ГРМ',
+        2: 'Ремонт паливної системи',
+        3: 'Ремонт і заміна двигунів',
+      },
+      6: {
+        header: 'Трансмісія',
+        1: 'Заміна зчеплення',
+        2: 'Ремонт та заміна автоматичних КПП',
+        3: 'Ремонт і заміна механічних КПП',
+        4: 'Ремонт і заміна роздавальних коробок',
+        5: 'Ремонт і заміна диференціалів',
+        6: 'Ремонт і заміна систем управління повним приводом',
+      },
+      7: {
+        header: 'Система охолодження',
+        1: 'Обслуговування та ремонт системи охолодження',
+        2: 'Заміна радіаторів та опалювачів салону',
+        3: 'Обслуговування та заміна системи кондиціювання повітря',
+        4: 'Миття радіаторів охолодження та кондиціонування',
+      },
+      8: {
+        header: 'Вихлопна система',
+        1: 'Ремонт і заміна елементів вихлопу (каталізатори, глушники, гофри, сажові фільтри)',
+        2: 'Зварювальні роботи по вихлопній системі',
+      },
+      9: {
+        header: 'Гальмівна система',
+        1: 'Заміна та обслуговування гальмівної системи (заміна гальмівних колодок, гальмівних шлангів, гальмівних магістралей)',
+        2: 'Обслуговування і заміна гальмівних супортів (заміна ремкомплекту і напрямних)',
+        3: 'Заміна тросів і регулювання ручного гальма',
+        4: 'Ремонт електричного ручного гальма',
+      },
+      10: {
+        header: 'Додаткові роботи',
+        1: 'Шиномонтаж (заміна і ремонт, балансування)',
+        2: 'Регулювання розвалу-сходження коліс',
+        3: 'Автомийка/детейлінг',
+        4: 'Pre-ITV (перевірка і підготовка автомобіля до проходження технічного огляду)',
+        5: 'Перевірка відповідності викидів бензинових і дизельних моторів екологічним нормам',
+        6: 'Декарбонізація і розкоксовка двигуна (в перспективі)',
+        7: 'Горіхоструменева чистка впускних каналів дизельних моторів (очищення від сажових відкладень) (в перспективі)',
+        8: 'Передпродажна підготовка автомобіля та супровід купівлі-продажу (технічна перевірка та діагностика) (в перспективі)',
+        9: 'Ремонт і заміна елементів салону (перешивка стель, стійок і керма) (в перспективі)',
+      },
+    },
+    footer: {
+      contact: 'Контактна інформація',
+      country: 'Іспанія',
     },
   },
 };

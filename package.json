@@ -13,8 +13,10 @@
     "vite": "^5.3.4"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.20",
     "cors": "^2.8.5",
     "micromodal": "^0.4.10",
+    "postcss": "^8.4.41",
     "tingle.js": "^0.16.0"
   }
 }
